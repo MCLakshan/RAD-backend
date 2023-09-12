@@ -1,8 +1,10 @@
 require('dotenv').config();
 
 const express = require('express');
-//const courseroutes = require('./routes/courses');
+
 const annroutes = require('./routes/anns');
+const courseroutes = require('./routes/courses');
+
 const mongoose = require('mongoose');
 
 //The express app...
@@ -15,10 +17,12 @@ app.use((req, res, next) => {
     next();
 });
 
-//route handeller...
-//app.use('/api/courses', courseroutes);
+
 
 app.use('/api/Anns', annroutes);
+
+app.use('/api/courses', courseroutes);
+
 
 //Connet to db
 mongoose.connect(process.env.MONG_URI)
