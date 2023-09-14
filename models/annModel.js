@@ -10,6 +10,7 @@ const annSchema = new Schema({
     a_body: {
         type: String,
         required: true // Corrected property name
+
     }
 }, { timestamps: true });
 
