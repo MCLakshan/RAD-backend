@@ -5,11 +5,11 @@ const Schema = mongoose.Schema;
 const annSchema = new Schema({
     a_title: {
         type: String,
-        requried: true
+        required: true
     },
     a_body: {
         type: String,
-        requried: true
+        required: true
     }
 }, {timestamps: true});
 
