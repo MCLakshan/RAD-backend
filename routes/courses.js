@@ -7,7 +7,12 @@ const{
     updateCourse
 } = require('../controllers/coursesController');
 
+const requireAuth = require('../middleware/requireAuth')
+
 const router = express.Router();
+
+// require auth for all course routes
+router.use(requireAuth)
 
 //To GET all courses
 router.get('/', getCourses);

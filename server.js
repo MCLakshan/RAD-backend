@@ -9,6 +9,8 @@ const mongoose = require('mongoose');
 const morgan = require('morgan')
 const teacher = require('./routes/teacherRouters')
 
+const userRoutes = require('./routes/user')
+
 //The express app...
 const app = express();
 
@@ -20,12 +22,11 @@ app.use((req, res, next) => {
     next();
 });
 
-
-
 app.use('/api/Anns', annroutes);
 
 app.use('/api/courses', courseroutes);
 app.use('/teacher',teacher)
+app.use('/api/user',userRoutes)
 
 
 //Connet to db
