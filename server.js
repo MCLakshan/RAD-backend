@@ -4,10 +4,12 @@ const express = require('express');
 
 const annroutes = require('./routes/anns');
 const courseroutes = require('./routes/courses');
+const studentsRoutes = require('./routes/studentRouters');
+const teachersRoutes = require('./routes/teacherRouters')
+
 
 const mongoose = require('mongoose');
 const morgan = require('morgan')
-const teacher = require('./routes/teacherRouters')
 
 //The express app...
 const app = express();
@@ -23,9 +25,9 @@ app.use((req, res, next) => {
 
 
 app.use('/api/Anns', annroutes);
-
+app.use('/api/students', studentsRoutes);
 app.use('/api/courses', courseroutes);
-app.use('/teacher',teacher)
+app.use('/api/teachers',teachersRoutes)
 
 
 //Connet to db
