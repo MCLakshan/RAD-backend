@@ -5,11 +5,11 @@ const Schema = mongoose.Schema;
 const courseSchema = new Schema({
     course_name: {
         type: String,
-        requried: true
+        required: true
     },
     course_id: {
         type: String,
-        requried: true
+        required: true
     }
 }, {timestamps: true});
 
